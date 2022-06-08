@@ -34,7 +34,7 @@ app.post("/UserDB", (req, res) => {
   userWork.save((err, user) => {
     if (err) {
       res.json({ errmsg: err });
-      return;
+      return;ho
     } else {
       res.json({ msg: user });
       console.log("User Added Successfully to DB");
