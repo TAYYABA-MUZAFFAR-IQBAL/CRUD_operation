@@ -29,7 +29,7 @@ app.post("/UserDB", (req, res) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-    role: req.body.populated,
+    role: req.body.role,
   });
   userWork.save((err, user) => {
     if (err) {
@@ -113,7 +113,7 @@ app.delete("/UserDB/:id", (req, res) => {
 
 //ROLES CRUD
 
-//Add User
+//Add User role
 
 app.post("/UserDB/roles", (req, res) => {
   console.log(req.body);
@@ -164,7 +164,7 @@ app.get("/UserDB/roles/:id", (req, res) => {
   });
 });
 
-//update user
+//update user role
 app.put("/UserDB/roles/:id", (req, res) => {
   console.log("req.body", req.body);
   RoleSch.findById(req.params.id, (err, role) => {
