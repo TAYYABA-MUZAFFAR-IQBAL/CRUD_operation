@@ -55,7 +55,7 @@ app.get("/UserDB", (req, res) => {
       res.status(200).json({ msg: users });
       console.log("All user data is extracted");
     }
-  });
+  }).populate('role');
 });
 
 //get User by id
@@ -70,7 +70,7 @@ app.get("/UserDB/:id", (req, res) => {
       console.log("users", users);
       console.log("require useer id is extracted");
     }
-  });
+  }).populate('role');
 });
 
 //update user
