@@ -9,10 +9,14 @@ const app = express();
 
 app.use(express.json());
 
+
+
+
 //connectivity with mongoDB
 
+
 mongoose
-  .connect("mongodb://localhost:27017/UserDB", {
+  .connect("mongodb+srv://tayyaba:tayyaba@cluster0.kql16.mongodb.net/test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -203,3 +207,7 @@ app.delete("/UserDB/roles/:id", (req, res) => {
 app.listen(4000, () => {
   console.log("listening on Port 4000");
 });
+
+app.get('/', (req, res) => {
+  res.send('App is working!')
+})
